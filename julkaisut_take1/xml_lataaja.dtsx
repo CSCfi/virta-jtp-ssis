@@ -317,7 +317,7 @@
                       dataType="System.String"
                       description="The XML schema definition used by the XML source adapter."
                       expressionType="Notify"
-                      name="XMLSchemaDefinition">C:\Users\pankalai\Documents\virta-julkaisutietopalvelu\XML-skeemat\julkaisut.xsd</property>
+                      name="XMLSchemaDefinition">K:\JUTI\APP\XML\xsd113\julkaisut.xsd</property>
                     <property
                       dataType="System.Boolean"
                       description="Identifies whether or not to use inline schema."
