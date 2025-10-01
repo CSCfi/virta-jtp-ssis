@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="10"
   DTS:ObjectName="xml_lataaja"
   DTS:PackageType="5"
-  DTS:VersionBuild="536"
-  DTS:VersionGUID="{05000465-E723-4251-8C1A-7DA1FA8C1BA3}">
+  DTS:VersionBuild="537"
+  DTS:VersionGUID="{357F6B37-30DB-4EF1-B875-F571ABF5E8DE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7598,6 +7598,13 @@
                           externalMetadataColumnId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].ExternalColumns[Artikkelinumero]"
                           lineageId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\julkaisu XML.Outputs[Julkaisu].Columns[Artikkelinumero]" />
                         <inputColumn
+                          refId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].Columns[Tiivistelma]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="Tiivistelma"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].ExternalColumns[Tiivistelma]"
+                          lineageId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\julkaisu XML.Outputs[Julkaisu].Columns[Tiivistelma]" />
+                        <inputColumn
                           refId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].Columns[JufoTunnus]"
                           cachedDataType="wstr"
                           cachedLength="10"
@@ -7867,11 +7874,6 @@
                           length="500"
                           name="JulkaisunTunnus" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].ExternalColumns[YhteisjulkaisunTunnus]"
-                          dataType="wstr"
-                          length="500"
-                          name="YhteisjulkaisunTunnus" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].ExternalColumns[JulkaisunTilaKoodi]"
                           dataType="i4"
                           name="JulkaisunTilaKoodi" />
@@ -8024,11 +8026,6 @@
                           length="20"
                           name="JulkaisunKieliKoodi" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].ExternalColumns[EVOjulkaisuKytkin]"
-                          dataType="wstr"
-                          length="1"
-                          name="EVOjulkaisuKytkin" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].ExternalColumns[YhteisjulkaisuYritysKytkin]"
                           dataType="wstr"
                           length="1"
@@ -8048,11 +8045,6 @@
                           dataType="wstr"
                           length="400"
                           name="PysyvaOsoiteTeksti" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].ExternalColumns[JuuliOsoiteTeksti]"
-                          dataType="wstr"
-                          length="400"
-                          name="JuuliOsoiteTeksti" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Julkaisut.Inputs[ADO NET Destination Input].ExternalColumns[AvoinSaatavuusKytkin]"
                           dataType="wstr"
@@ -10648,7 +10640,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Lokitus"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -10788,36 +10780,6 @@
               Language="CSharp"
               ReadOnlyVariables="User::KohdeOK,User::Lahde,User::TiedostoNimi"
               ReadWriteVariables="User::LatausID,User::TiedostoKokoNimi,User::TiedostoOK">
-              <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_19357f7f5e7e4699aeea7d6e418173cb")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_19357f7f5e7e4699aeea7d6e418173cb")]
-[assembly: AssemblyCopyright("Copyright @  2015")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -11022,6 +10984,35 @@ using System.Runtime.CompilerServices;
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_19357f7f5e7e4699aeea7d6e418173cb.Properties.Settings.get_Default():ST_19357f7f5e7e4699aeea7d6e418173cb.Properties.Sett" +
+    "ings")]
+
+namespace ST_19357f7f5e7e4699aeea7d6e418173cb.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -11301,34 +11292,35 @@ namespace ST_19357f7f5e7e4699aeea7d6e418173cb
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_19357f7f5e7e4699aeea7d6e418173cb")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_19357f7f5e7e4699aeea7d6e418173cb")]
+[assembly: AssemblyCopyright("Copyright @  2015")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_19357f7f5e7e4699aeea7d6e418173cb.Properties.Settings.get_Default():ST_19357f7f5e7e4699aeea7d6e418173cb.Properties.Sett" +
-    "ings")]
-
-namespace ST_19357f7f5e7e4699aeea7d6e418173cb.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -11581,7 +11573,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:LocaleID="-1"
           DTS:ObjectName="Siirto julkaisut_ods kantaan"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -11696,7 +11688,7 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
           DTS:LocaleID="-1"
           DTS:ObjectName="Virheellinen tiedosto"
           DTS:TaskContact="File System Task;Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -12106,6 +12098,18 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="189,42"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_AvainsanaTeksti"
+          TopLeft="1682,504" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Lisatiedot"
+          TopLeft="1270,512" />
+        <NodeLayout
+          Size="197,44"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tekijat"
+          TopLeft="719.333333395421,22.629560414807" />
+        <NodeLayout
           Size="218,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Rinnakkaistallennettu"
           TopLeft="747,672" />
@@ -12122,9 +12126,9 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Avainsanat"
           TopLeft="1599,350" />
         <NodeLayout
-          Size="206,44"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tieteenalakoodit"
-          TopLeft="472.5,519.330188679245" />
+          Size="209,42"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Preprinttallennetut"
+          TopLeft="269.499992139637,643.73331679781" />
         <NodeLayout
           Size="272,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_RinnakkaistallenettuosoiteTeksti"
@@ -12138,17 +12142,21 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tekija"
           TopLeft="735.48113207547,102.1880506554" />
         <NodeLayout
-          Size="203,42"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Preprinttallennus"
-          TopLeft="275.285706249731,580.90474884283" />
-        <NodeLayout
           Size="193,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Infrastruktuuri"
           TopLeft="485,102" />
         <NodeLayout
           Size="169,42"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Yksikko"
+          TopLeft="88.481132075472,641.65094339623" />
+        <NodeLayout
+          Size="169,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Aineistot"
           TopLeft="949,22" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_RahoittajanNimi"
+          TopLeft="1415.27358490566,262.971698113208" />
         <NodeLayout
           Size="195,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_RahoituspaatosID"
@@ -12162,17 +12170,13 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Taiteenalakoodit"
           TopLeft="738,513" />
         <NodeLayout
-          Size="209,42"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Preprinttallennetut"
-          TopLeft="269.499992139637,643.73331679781" />
-        <NodeLayout
           Size="193,44"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Hankkeet"
           TopLeft="1168.44339622641,26.6320754717" />
         <NodeLayout
-          Size="193,44"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tieteenalakoodi"
-          TopLeft="480.462264150943,582.235849056604" />
+          Size="206,44"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tieteenalakoodit"
+          TopLeft="472.5,519.330188679245" />
         <NodeLayout
           Size="158,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_AineistoID"
@@ -12182,10 +12186,6 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Rahoituspaatos"
           TopLeft="1405,87" />
         <NodeLayout
-          Size="169,42"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Yksikko"
-          TopLeft="88.481132075472,641.65094339623" />
-        <NodeLayout
           Size="143,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_ISSN"
           TopLeft="37,105" />
@@ -12194,13 +12194,13 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Taiteenalakoodi"
           TopLeft="738,606" />
         <NodeLayout
-          Size="210,44"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_OrgYksikkoKoodi"
-          TopLeft="74.5,566.028301886792" />
-        <NodeLayout
           Size="150,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_HankeID"
           TopLeft="1168.27358490566,172.971698113208" />
+        <NodeLayout
+          Size="193,44"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tieteenalakoodi"
+          TopLeft="480.462264150943,582.235849056604" />
         <NodeLayout
           Size="158,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Aineisto"
@@ -12213,6 +12213,10 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
           Size="146,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_ISBN"
           TopLeft="55,29" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Preprinttallennus"
+          TopLeft="275.285706249731,580.90474884283" />
         <NodeLayout
           Size="243,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_TaidealanTyyppiKategoria"
@@ -12230,29 +12234,449 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_TekijatYksikkoKoodi"
           TopLeft="317.5,732.971698113208" />
         <NodeLayout
-          Size="170,42"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Lisatiedot"
-          TopLeft="1270,512" />
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_RahoittajanNimi"
-          TopLeft="1415.27358490566,262.971698113208" />
-        <NodeLayout
-          Size="197,42"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Infrastruktuurit"
-          TopLeft="485,22" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_AvainsanaTeksti"
-          TopLeft="1682,504" />
-        <NodeLayout
-          Size="197,44"
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tekijat"
-          TopLeft="719.333333395421,22.629560414807" />
+          Size="210,44"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_OrgYksikkoKoodi"
+          TopLeft="74.5,566.028301886792" />
         <NodeLayout
           Size="138,42"
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\julkaisu XML"
           TopLeft="42.2735849056598,355.5" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Infrastruktuurit"
+          TopLeft="485,22" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Lisatiedot]"
+          TopLeft="150.27358490566,397.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="1204.72641509434,114.5"
+              Start="0,0"
+              End="1204.72641509434,107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6969696969697" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.6969696969697"
+                    Point2="0,34.6969696969697"
+                    Point3="4,34.6969696969697" />
+                  <mssgle:LineSegment
+                    End="1200.72641509434,34.6969696969697" />
+                  <mssgle:CubicBezierSegment
+                    Point1="1200.72641509434,34.6969696969697"
+                    Point2="1204.72641509434,34.6969696969697"
+                    Point3="1204.72641509434,38.6969696969697" />
+                  <mssgle:LineSegment
+                    End="1204.72641509434,107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="580.65182082842,39.6969696969697,43.4227734375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Julkaisut__Julkaisu__Tekijat__Tekija__Yksikot__YksikkoKoodi]"
+          TopLeft="80.9402515723265,397.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="346.559748427674,335.471698113208"
+              Start="0,0"
+              End="346.559748427674,327.971698113208">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,116.478999941586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,116.478999941586"
+                    Point2="0,120.478999941586"
+                    Point3="4,120.478999941586" />
+                  <mssgle:LineSegment
+                    End="342.559748427674,120.478999941586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="342.559748427674,120.478999941586"
+                    Point2="346.559748427674,120.478999941586"
+                    Point3="346.559748427674,124.478999941586" />
+                  <mssgle:LineSegment
+                    End="346.559748427674,327.971698113208" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.5943273388368,125.478999941586,273.37109375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Julkaisut__Julkaisu__JulkaisunOrgYksikot__YksikkoKoodi]"
+          TopLeft="72.2735849056598,397.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.22641509434,168.528301886792"
+              Start="0,0"
+              End="107.22641509434,161.028301886792">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.069182389937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.069182389937"
+                    Point2="0,51.069182389937"
+                    Point3="4,51.069182389937" />
+                  <mssgle:LineSegment
+                    End="103.22641509434,51.069182389937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.22641509434,51.069182389937"
+                    Point2="107.22641509434,51.069182389937"
+                    Point3="107.22641509434,55.069182389937" />
+                  <mssgle:LineSegment
+                    End="107.22641509434,161.028301886792" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-72.2373393278299,56.069182389937,251.70109375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[JulkaisunOrgYksikot]"
+          TopLeft="54.9402515723265,397.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.522012578616,330.679245283019"
+              Start="0,0"
+              End="112.522012578616,323.179245283019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.2890257989988" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.2890257989988"
+                    Point2="0,51.2890257989988"
+                    Point3="4,51.2890257989988" />
+                  <mssgle:LineSegment
+                    End="108.522012578616,51.2890257989988" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.522012578616,51.2890257989988"
+                    Point2="112.522012578616,51.2890257989988"
+                    Point3="112.522012578616,55.2890257989988" />
+                  <mssgle:LineSegment
+                    End="112.522012578616,323.179245283019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.4729398830582,56.2890257989988,89.5761328125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Julkaisu]"
+          TopLeft="57.5779327317468,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="292.422067268253,-294.5"
+              Start="0,0"
+              End="292.422067268253,-287">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-49.4626095925735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-49.4626095925735"
+                    Point2="0,-53.4626095925735"
+                    Point3="4,-53.4626095925735" />
+                  <mssgle:LineSegment
+                    End="288.422067268253,-53.4626095925735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="288.422067268253,-53.4626095925735"
+                    Point2="292.422067268253,-53.4626095925735"
+                    Point3="292.422067268253,-57.4626095925735" />
+                  <mssgle:LineSegment
+                    End="292.422067268253,-287" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="128.266951602877,-48.4626095925735,35.8881640625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[ISSN]"
+          TopLeft="51.9257588187033,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.5742411812967,-208.5"
+              Start="0,0"
+              End="56.5742411812967,-201">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-21.5870646766169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-21.5870646766169"
+                    Point2="0,-25.5870646766169"
+                    Point3="4,-25.5870646766169" />
+                  <mssgle:LineSegment
+                    End="52.5742411812967,-25.5870646766169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.5742411812967,-25.5870646766169"
+                    Point2="56.5742411812967,-25.5870646766169"
+                    Point3="56.5742411812967,-29.5870646766169" />
+                  <mssgle:LineSegment
+                    End="56.5742411812967,-201" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="17.1104213718984,-20.5870646766169,22.3533984375,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[ISBN]"
+          TopLeft="51.9257588187033,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76.0742411812967,-284.5"
+              Start="0,0"
+              End="76.0742411812967,-277">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-30.9137645107794" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-30.9137645107794"
+                    Point2="0,-34.9137645107794"
+                    Point3="4,-34.9137645107794" />
+                  <mssgle:LineSegment
+                    End="72.0742411812967,-34.9137645107794" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.0742411812967,-34.9137645107794"
+                    Point2="76.0742411812967,-34.9137645107794"
+                    Point3="76.0742411812967,-38.9137645107794" />
+                  <mssgle:LineSegment
+                    End="76.0742411812967,-277" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="26.7004213718984,-29.9137645107794,22.6733984375,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Infrastruktuurit]"
+          TopLeft="80.1866283839207,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="503.313371616079,-291.5"
+              Start="0,0"
+              End="503.313371616079,-284">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-99.370475803172" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-99.370475803172"
+                    Point2="0,-103.370475803172"
+                    Point3="4,-103.370475803172" />
+                  <mssgle:LineSegment
+                    End="499.313371616079,-103.370475803172" />
+                  <mssgle:CubicBezierSegment
+                    Point1="499.313371616079,-103.370475803172"
+                    Point2="503.313371616079,-103.370475803172"
+                    Point3="503.313371616079,-107.370475803172" />
+                  <mssgle:LineSegment
+                    End="503.313371616079,-284" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="217.37369752679,-98.370475803172,68.5659765625,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[InfrastruktuuriID]"
+          TopLeft="68.8822805578338,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="509.391304347826,-148.528301886792"
+              Start="0,0"
+              End="509.391304347826,-141.028301886792">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-37.3366624623541" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-37.3366624623541"
+                    Point2="0,-41.3366624623541"
+                    Point3="4,-41.3366624623541" />
+                  <mssgle:LineSegment
+                    End="505.391304347826,-41.3366624623541" />
+                  <mssgle:CubicBezierSegment
+                    Point1="505.391304347826,-41.3366624623541"
+                    Point2="509.391304347826,-41.3366624623541"
+                    Point3="509.391304347826,-45.3366624623541" />
+                  <mssgle:LineSegment
+                    End="509.391304347826,-141.028301886792" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="216.977839673913,-36.3366624623541,75.435625,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Infrastruktuuri]"
+          TopLeft="74.5344544708772,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="506.965545529123,-211.5"
+              Start="0,0"
+              End="506.965545529123,-204">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-63.3821382567626" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-63.3821382567626"
+                    Point2="0,-67.3821382567626"
+                    Point3="4,-67.3821382567626" />
+                  <mssgle:LineSegment
+                    End="502.965545529123,-67.3821382567626" />
+                  <mssgle:CubicBezierSegment
+                    Point1="502.965545529123,-67.3821382567626"
+                    Point2="506.965545529123,-67.3821382567626"
+                    Point3="506.965545529123,-71.3821382567626" />
+                  <mssgle:LineSegment
+                    End="506.965545529123,-204" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="221.177304014561,-62.3821382567626,64.6109375,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Hankkeet]"
+          TopLeft="136.708367514356,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="1128.23502871205,-284.8679245283"
+              Start="0,0"
+              End="1128.23502871205,-277.3679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-106.250158508056" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-106.250158508056"
+                    Point2="0,-110.250158508056"
+                    Point3="4,-110.250158508056" />
+                  <mssgle:LineSegment
+                    End="1124.23502871205,-110.250158508056" />
+                  <mssgle:CubicBezierSegment
+                    Point1="1124.23502871205,-110.250158508056"
+                    Point2="1128.23502871205,-110.250158508056"
+                    Point3="1128.23502871205,-114.250158508056" />
+                  <mssgle:LineSegment
+                    End="1128.23502871205,-277.3679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="542.791127637277,-105.250158508056,42.6527734375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[HankeID]"
+          TopLeft="131.056193601312,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="1112.21739130435,-140.528301886792"
+              Start="0,0"
+              End="1112.21739130435,-133.028301886792">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-54.5060822860789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-54.5060822860789"
+                    Point2="0,-58.5060822860789"
+                    Point3="4,-58.5060822860789" />
+                  <mssgle:LineSegment
+                    End="1108.21739130435,-58.5060822860789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="1108.21739130435,-58.5060822860789"
+                    Point2="1112.21739130435,-58.5060822860789"
+                    Point3="1112.21739130435,-62.5060822860789" />
+                  <mssgle:LineSegment
+                    End="1112.21739130435,-133.028301886792" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="536.467484714674,-53.5060822860789,39.282421875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Hanke]"
           TopLeft="125.404019688269,355.5">
@@ -13105,438 +13529,6 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Lisatiedot]"
-          TopLeft="150.27358490566,397.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="1204.72641509434,114.5"
-              Start="0,0"
-              End="1204.72641509434,107">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.6969696969697" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.6969696969697"
-                    Point2="0,34.6969696969697"
-                    Point3="4,34.6969696969697" />
-                  <mssgle:LineSegment
-                    End="1200.72641509434,34.6969696969697" />
-                  <mssgle:CubicBezierSegment
-                    Point1="1200.72641509434,34.6969696969697"
-                    Point2="1204.72641509434,34.6969696969697"
-                    Point3="1204.72641509434,38.6969696969697" />
-                  <mssgle:LineSegment
-                    End="1204.72641509434,107" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="580.65182082842,39.6969696969697,43.4227734375,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Julkaisut__Julkaisu__Tekijat__Tekija__Yksikot__YksikkoKoodi]"
-          TopLeft="80.9402515723265,397.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="346.559748427674,335.471698113208"
-              Start="0,0"
-              End="346.559748427674,327.971698113208">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,116.478999941586" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,116.478999941586"
-                    Point2="0,120.478999941586"
-                    Point3="4,120.478999941586" />
-                  <mssgle:LineSegment
-                    End="342.559748427674,120.478999941586" />
-                  <mssgle:CubicBezierSegment
-                    Point1="342.559748427674,120.478999941586"
-                    Point2="346.559748427674,120.478999941586"
-                    Point3="346.559748427674,124.478999941586" />
-                  <mssgle:LineSegment
-                    End="346.559748427674,327.971698113208" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="36.5943273388368,125.478999941586,273.37109375,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Julkaisut__Julkaisu__JulkaisunOrgYksikot__YksikkoKoodi]"
-          TopLeft="72.2735849056598,397.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="107.22641509434,168.528301886792"
-              Start="0,0"
-              End="107.22641509434,161.028301886792">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.069182389937" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.069182389937"
-                    Point2="0,51.069182389937"
-                    Point3="4,51.069182389937" />
-                  <mssgle:LineSegment
-                    End="103.22641509434,51.069182389937" />
-                  <mssgle:CubicBezierSegment
-                    Point1="103.22641509434,51.069182389937"
-                    Point2="107.22641509434,51.069182389937"
-                    Point3="107.22641509434,55.069182389937" />
-                  <mssgle:LineSegment
-                    End="107.22641509434,161.028301886792" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-72.2373393278299,56.069182389937,251.70109375,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[JulkaisunOrgYksikot]"
-          TopLeft="54.9402515723265,397.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="112.522012578616,330.679245283019"
-              Start="0,0"
-              End="112.522012578616,323.179245283019">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.2890257989988" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.2890257989988"
-                    Point2="0,51.2890257989988"
-                    Point3="4,51.2890257989988" />
-                  <mssgle:LineSegment
-                    End="108.522012578616,51.2890257989988" />
-                  <mssgle:CubicBezierSegment
-                    Point1="108.522012578616,51.2890257989988"
-                    Point2="112.522012578616,51.2890257989988"
-                    Point3="112.522012578616,55.2890257989988" />
-                  <mssgle:LineSegment
-                    End="112.522012578616,323.179245283019" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="11.4729398830582,56.2890257989988,89.5761328125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Julkaisu]"
-          TopLeft="57.5779327317468,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="292.422067268253,-294.5"
-              Start="0,0"
-              End="292.422067268253,-287">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-49.4626095925735" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-49.4626095925735"
-                    Point2="0,-53.4626095925735"
-                    Point3="4,-53.4626095925735" />
-                  <mssgle:LineSegment
-                    End="288.422067268253,-53.4626095925735" />
-                  <mssgle:CubicBezierSegment
-                    Point1="288.422067268253,-53.4626095925735"
-                    Point2="292.422067268253,-53.4626095925735"
-                    Point3="292.422067268253,-57.4626095925735" />
-                  <mssgle:LineSegment
-                    End="292.422067268253,-287" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="128.266951602877,-48.4626095925735,35.8881640625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[ISSN]"
-          TopLeft="51.9257588187033,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="56.5742411812967,-208.5"
-              Start="0,0"
-              End="56.5742411812967,-201">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-21.5870646766169" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-21.5870646766169"
-                    Point2="0,-25.5870646766169"
-                    Point3="4,-25.5870646766169" />
-                  <mssgle:LineSegment
-                    End="52.5742411812967,-25.5870646766169" />
-                  <mssgle:CubicBezierSegment
-                    Point1="52.5742411812967,-25.5870646766169"
-                    Point2="56.5742411812967,-25.5870646766169"
-                    Point3="56.5742411812967,-29.5870646766169" />
-                  <mssgle:LineSegment
-                    End="56.5742411812967,-201" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="17.1104213718984,-20.5870646766169,22.3533984375,9.5341796875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[ISBN]"
-          TopLeft="51.9257588187033,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="76.0742411812967,-284.5"
-              Start="0,0"
-              End="76.0742411812967,-277">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-30.9137645107794" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-30.9137645107794"
-                    Point2="0,-34.9137645107794"
-                    Point3="4,-34.9137645107794" />
-                  <mssgle:LineSegment
-                    End="72.0742411812967,-34.9137645107794" />
-                  <mssgle:CubicBezierSegment
-                    Point1="72.0742411812967,-34.9137645107794"
-                    Point2="76.0742411812967,-34.9137645107794"
-                    Point3="76.0742411812967,-38.9137645107794" />
-                  <mssgle:LineSegment
-                    End="76.0742411812967,-277" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="26.7004213718984,-29.9137645107794,22.6733984375,9.5341796875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Infrastruktuurit]"
-          TopLeft="80.1866283839207,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="503.313371616079,-291.5"
-              Start="0,0"
-              End="503.313371616079,-284">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-99.370475803172" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-99.370475803172"
-                    Point2="0,-103.370475803172"
-                    Point3="4,-103.370475803172" />
-                  <mssgle:LineSegment
-                    End="499.313371616079,-103.370475803172" />
-                  <mssgle:CubicBezierSegment
-                    Point1="499.313371616079,-103.370475803172"
-                    Point2="503.313371616079,-103.370475803172"
-                    Point3="503.313371616079,-107.370475803172" />
-                  <mssgle:LineSegment
-                    End="503.313371616079,-284" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="217.37369752679,-98.370475803172,68.5659765625,9.7978515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[InfrastruktuuriID]"
-          TopLeft="68.8822805578338,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="509.391304347826,-148.528301886792"
-              Start="0,0"
-              End="509.391304347826,-141.028301886792">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-37.3366624623541" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-37.3366624623541"
-                    Point2="0,-41.3366624623541"
-                    Point3="4,-41.3366624623541" />
-                  <mssgle:LineSegment
-                    End="505.391304347826,-41.3366624623541" />
-                  <mssgle:CubicBezierSegment
-                    Point1="505.391304347826,-41.3366624623541"
-                    Point2="509.391304347826,-41.3366624623541"
-                    Point3="509.391304347826,-45.3366624623541" />
-                  <mssgle:LineSegment
-                    End="509.391304347826,-141.028301886792" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="216.977839673913,-36.3366624623541,75.435625,9.7978515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Infrastruktuuri]"
-          TopLeft="74.5344544708772,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="506.965545529123,-211.5"
-              Start="0,0"
-              End="506.965545529123,-204">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-63.3821382567626" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-63.3821382567626"
-                    Point2="0,-67.3821382567626"
-                    Point3="4,-67.3821382567626" />
-                  <mssgle:LineSegment
-                    End="502.965545529123,-67.3821382567626" />
-                  <mssgle:CubicBezierSegment
-                    Point1="502.965545529123,-67.3821382567626"
-                    Point2="506.965545529123,-67.3821382567626"
-                    Point3="506.965545529123,-71.3821382567626" />
-                  <mssgle:LineSegment
-                    End="506.965545529123,-204" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="221.177304014561,-62.3821382567626,64.6109375,9.7978515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[Hankkeet]"
-          TopLeft="136.708367514356,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="1128.23502871205,-284.8679245283"
-              Start="0,0"
-              End="1128.23502871205,-277.3679245283">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-106.250158508056" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-106.250158508056"
-                    Point2="0,-110.250158508056"
-                    Point3="4,-110.250158508056" />
-                  <mssgle:LineSegment
-                    End="1124.23502871205,-110.250158508056" />
-                  <mssgle:CubicBezierSegment
-                    Point1="1124.23502871205,-110.250158508056"
-                    Point2="1128.23502871205,-110.250158508056"
-                    Point3="1128.23502871205,-114.250158508056" />
-                  <mssgle:LineSegment
-                    End="1128.23502871205,-277.3679245283" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="542.791127637277,-105.250158508056,42.6527734375,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan.Paths[HankeID]"
-          TopLeft="131.056193601312,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="1112.21739130435,-140.528301886792"
-              Start="0,0"
-              End="1112.21739130435,-133.028301886792">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-54.5060822860789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-54.5060822860789"
-                    Point2="0,-58.5060822860789"
-                    Point3="4,-58.5060822860789" />
-                  <mssgle:LineSegment
-                    End="1108.21739130435,-58.5060822860789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="1108.21739130435,-58.5060822860789"
-                    Point2="1112.21739130435,-58.5060822860789"
-                    Point3="1112.21739130435,-62.5060822860789" />
-                  <mssgle:LineSegment
-                    End="1112.21739130435,-133.028301886792" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="536.467484714674,-53.5060822860789,39.282421875,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -13552,6 +13544,30 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_AvainsanaTeksti">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Lisatiedot">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tekijat">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Rinnakkaistallennettu">
     <Properties>
@@ -13585,7 +13601,7 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tieteenalakoodit">
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Preprinttallennetut">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13617,14 +13633,6 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Preprinttallennus">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Infrastruktuuri">
     <Properties>
       <Property>
@@ -13633,7 +13641,23 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Yksikko">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Aineistot">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_RahoittajanNimi">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13665,14 +13689,6 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Preprinttallennetut">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Hankkeet">
     <Properties>
       <Property>
@@ -13681,7 +13697,7 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tieteenalakoodi">
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tieteenalakoodit">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13705,14 +13721,6 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Yksikko">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_ISSN">
     <Properties>
       <Property>
@@ -13729,7 +13737,7 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_OrgYksikkoKoodi">
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_HankeID">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13737,7 +13745,7 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_HankeID">
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tieteenalakoodi">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13762,6 +13770,14 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_ISBN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Preprinttallennus">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13801,15 +13817,7 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Lisatiedot">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_RahoittajanNimi">
+    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_OrgYksikkoKoodi">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13818,22 +13826,6 @@ Virhe: " +   @[System::ErrorDescription]</DTS:PropertyExpression>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Infrastruktuurit">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_AvainsanaTeksti">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Lataus julkaisut_sa kantaan\XML_Tekijat">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
